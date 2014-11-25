@@ -1,8 +1,12 @@
 ScheduleMeWebapp::Application.routes.draw do
+  
   resources :groups
-
-
   resources :users
+
+  # Endpoints for android app. Respond with JSON
+
+  match '/find_user', :to => 'users#find', via: :get, :constraints => {:format => /(json)/}
+  match '/add_user', :to => 'users#add', via: :get, :constraints => {:format => /(json)/}
 
 
   # The priority is based upon order of creation:

@@ -1,4 +1,40 @@
 class UsersController < ApplicationController
+
+  respond_to :html, :json
+
+  #GET /users/find?name=search_criteria
+  def find
+
+    if (params[:did]) then
+      @user = User.where(did: params[:did])
+    else
+      @user = User.where(email: params[:email])
+    end
+
+    respond_to do |format|
+      format.json { render json: @user }
+    end
+
+  end
+
+  #GET /users/find?name=search_criteria
+  def add
+
+    #http://localhost:3000/add_user.json?user[did]=test&user[fname]=first&user[lname]=last&user[email]=email@email.com&user[phone]=111-111-1111&user[password]=test
+    
+    @user = User.new(params[:user])
+
+    respond_to do |format|
+      if @user.save
+        format.json { render json: @user, status: :created, location: @user }
+      else
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
+
+  end
+
+
   # GET /users
   # GET /users.json
   def index
