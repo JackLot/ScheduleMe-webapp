@@ -1,0 +1,25 @@
+<h1>ScheduleMe Webapp: <em>Rails REST framework for the ScheduleMe webapp</em></h1>
+<hr /><hr />
+
+<h2 style="margin-top: 25px;"> GUIs for manual CRUD (Create, Edit, Update and Delete) </h2><hr />
+
+<a href="/users"><button>Users</button></a>
+
+<br /><br /><h2> Endpoints Available </h2><hr />
+
+<h2>Create users</h2>
+<p style="font-size: 16px; margin-bottom: 35px;">
+<strong>Endpoint</strong>: /add_user.json?user[did]=test&user[fname]=first&user[lname]=last&user[email]=email@email.com&user[phone]=111-111-1111&user[password]=test <br /><br />
+
+<strong>Action</strong>: Adds user to the DB with the given attributes<br />
+<strong>Params</strong>: user[did], user[fname], user[lname], user[email], user[phone], user[password]
+
+</p>
+
+<h2>Find users</h2>
+<p style="font-size: 16px; margin-bottom: 35px;">
+<strong>Endpoint</strong>:  /find_user.json?did=jlotkows <strong> OR </strong> /find_user.json?email=jlotkows@terpmail.umd.edu <br /><br />
+
+<strong>Action</strong>: Queries the DB and spits back any users found with the given email or did<br />
+<strong>Params</strong>: did <em>or</em> email
+</p>

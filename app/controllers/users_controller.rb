@@ -2,7 +2,8 @@ class UsersController < ApplicationController
 
   respond_to :html, :json
 
-  #GET /users/find?name=search_criteria
+  #GET /users/find.json?name=search_criteria
+  # search_criteria is either did or email
   def find
 
     if (params[:did]) then
