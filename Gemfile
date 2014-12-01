@@ -39,3 +39,5 @@ gem 'rails_12factor', group: :production
 
 # To use debugger
 # gem 'debugger'
+
+ruby "1.9.3"
