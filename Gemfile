@@ -8,6 +8,9 @@ gem 'rails', '3.2.16'
 #gem 'sqlite3'
 gem 'pg'
 
+# fullcalendar gems
+gem 'fullcalendar-rails'
+gem 'momentjs-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.
