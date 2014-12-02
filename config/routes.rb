@@ -21,7 +21,8 @@ ScheduleMeWebapp::Application.routes.draw do
 
   match '/get_schedule', :to => 'schedules#show', via: :get #HTML rendering of students schedule
 
-
+  # Calendar endpoint for rendering schedules
+  match '/calendar', :to => 'calendar#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
