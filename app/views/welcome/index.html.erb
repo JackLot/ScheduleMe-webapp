@@ -3,31 +3,39 @@
 
 <h2 style="margin-top: 25px;"> GUIs for manual CRUD (Create, Edit, Update and Delete) </h2><hr />
 
-<a href="/users"><button>Users</button></a>
+<a href="/users"><button>Users</button></a>&nbsp;&nbsp;
+<a href="/schedules"><button>Schedules</button></a>
 
 <br /><br /><h2> Endpoints Available </h2><hr />
 
 <h2>Create users</h2>
 <p style="font-size: 16px; margin-bottom: 35px;">
-<strong>Endpoint</strong>: /add_user.json?user[did]=jlotkows&user[fname]=Jack&user[lname]=Lot&user[email]=jlotkows@terpmail.umd.edu&user[phone]=111-111-1111&user[password]=test <br /><br />
+	<strong>Endpoint</strong>: /add_user.json?user[did]=jlotkows&user[fname]=Jack&user[lname]=Lot&user[email]=jlotkows@terpmail.umd.edu&user[phone]=111-111-1111&user[password]=test <br /><br />
 
-<strong>Action</strong>: Adds user to the DB with the given attributes<br />
-<strong>Params</strong>: user[did], user[fname], user[lname], user[email], user[phone], user[password]
-
+	<strong>Action</strong>: Adds user to the DB with the given attributes<br />
+	<strong>Params</strong>: user[did], user[fname], user[lname], user[email], user[phone], user[password]
 </p>
 
 <h2>Login User</h2>
 <p style="font-size: 16px; margin-bottom: 35px;">
-<strong>Endpoint</strong>:  /login.json?did=jlotkows&password=test <br /><br />
+	<strong>Endpoint</strong>:  /login.json?did=jlotkows&password=test <br /><br />
 
-<strong>Action</strong>: Queries the DB for a user with the given did and password and returns the user if they exist<br />
-<strong>Params</strong>: did, password
+	<strong>Action</strong>: Queries the DB for a user with the given did and password and returns the user if they exist<br />
+	<strong>Params</strong>: did, password
 </p>
 
 <h2>Find users</h2>
 <p style="font-size: 16px; margin-bottom: 35px;">
-<strong>Endpoint</strong>:  /find_user.json?did=jlotkows <strong> OR </strong> /find_user.json?email=jlotkows@terpmail.umd.edu <br /><br />
+	<strong>Endpoint</strong>:  /find_user.json?did=jlotkows <strong> OR </strong> /find_user.json?email=jlotkows@terpmail.umd.edu <br /><br />
 
-<strong>Action</strong>: Queries the DB and spits back any users found with the given email or did<br />
-<strong>Params</strong>: did <em>or</em> email
+	<strong>Action</strong>: Queries the DB and spits back any users found with the given email or did<br />
+	<strong>Params</strong>: did <em>or</em> email
+</p>
+
+<h2>Add a class to a users schedule</h2>
+<p style="font-size: 16px; margin-bottom: 35px;">
+	<strong>Endpoint</strong>:  /add.json?did=jlotkows&class=CMSC436&sec=0101<br /><br />
+
+	<strong>Action</strong>: Hits TESTUDO with the given class and section. Pulls down the class datetimes and adds the class to the students schedule<br />
+	<strong>Params</strong>: did, class and section
 </p>

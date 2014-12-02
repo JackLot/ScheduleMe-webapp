@@ -1,5 +1,8 @@
 ScheduleMeWebapp::Application.routes.draw do
   
+  resources :schedules
+
+
   get "welcome/index"
   #root 'welcome#index'
 
@@ -8,9 +11,16 @@ ScheduleMeWebapp::Application.routes.draw do
 
   # Endpoints for android app. Respond with JSON
 
+  # Users model endpoints
   match '/find_user', :to => 'users#find', via: :get, :constraints => {:format => /(json)/}
   match '/add_user', :to => 'users#add', via: :get, :constraints => {:format => /(json)/}
   match '/login', :to => 'users#login', via: :get, :constraints => {:format => /(json)/}
+
+  # Schedule model endpoints
+  match '/add_class', :to => 'schedules#add', via: :get, :constraints => {:format => /(json)/}
+
+  match '/get_schedule', :to => 'schedules#show', via: :get #HTML rendering of students schedule
+
 
 
   # The priority is based upon order of creation:
