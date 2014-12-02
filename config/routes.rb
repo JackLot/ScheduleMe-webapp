@@ -10,6 +10,7 @@ ScheduleMeWebapp::Application.routes.draw do
 
   match '/find_user', :to => 'users#find', via: :get, :constraints => {:format => /(json)/}
   match '/add_user', :to => 'users#add', via: :get, :constraints => {:format => /(json)/}
+  match '/login', :to => 'users#login', via: :get, :constraints => {:format => /(json)/}
 
 
   # The priority is based upon order of creation:

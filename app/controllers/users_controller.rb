@@ -18,9 +18,21 @@ class UsersController < ApplicationController
 
   end
 
+  #GET /login?did=jlotkows&password=test
+  def login
+
+    givenPassword = params[:password]
+    @user = User.where(did: params[:did], password: params[:password])
+
+
+    respond_to do |format|
+      format.json { render json: @user }
+    end
+
+  end
+
   #GET /users/find?name=search_criteria
   def add
-
     #http://localhost:3000/add_user.json?user[did]=test&user[fname]=first&user[lname]=last&user[email]=email@email.com&user[phone]=111-111-1111&user[password]=test
     
     @user = User.new(params[:user])
