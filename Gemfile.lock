@@ -53,9 +53,14 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.25.1)
+    mini_portile (0.6.1)
     momentjs-rails (2.8.3)
       railties (>= 3.1)
     multi_json (1.10.1)
+    nokogiri (1.6.5)
+      mini_portile (~> 0.6.0)
+    nokogiri (1.6.5-x86-mingw32)
+      mini_portile (~> 0.6.0)
     pg (0.17.1)
     pg (0.17.1-x86-mingw32)
     polyglot (0.3.5)
@@ -118,6 +123,7 @@ DEPENDENCIES
   fullcalendar-rails
   jquery-rails
   momentjs-rails
+  nokogiri (~> 1.6.5)
   pg
   rails (= 3.2.16)
   rails_12factor

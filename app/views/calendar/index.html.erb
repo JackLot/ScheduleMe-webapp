@@ -1,9 +1,14 @@
+<%= @test %>
+
 <div id='calendar'></div>
 
 <script>
 $(document).ready(function() {
 	$('#calendar').fullCalendar({
-        
+        minTime: 8,
+        maxTime: 24,
+        weekends: false,
+        defaultView: "agendaWeek"
 	});
 });
 </script>

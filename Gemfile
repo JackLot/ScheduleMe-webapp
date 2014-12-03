@@ -12,6 +12,9 @@ gem 'pg'
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
 
+# nokogiri/html parsing
+gem 'nokogiri', '~> 1.6.5'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

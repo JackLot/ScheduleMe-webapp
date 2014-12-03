@@ -1,12 +1,14 @@
+include SchedulesHelper
+
 class SchedulesController < ApplicationController
-  
+
   def add
     
-    jsonClass = hitTestudo(params[:classname], params[:section])
+    @testudo = hitTestudo(params[:did], params[:class], params[:sec])
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @schedules }
+      format.json { render json: @testudo }
     end
   end
 
