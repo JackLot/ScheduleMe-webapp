@@ -1,0 +1,26 @@
+<div id='calendar'></div>
+
+<script>
+$(document).ready(function() {
+	$('#calendar').fullCalendar({
+        minTime: "08:00:00",
+        maxTime: "22:00:00",
+        weekends: false,
+        defaultView: "agendaWeek",
+        eventSources: [
+        	{
+        		url: '/get_calendar.json',
+        		dataType: 'JSON',
+        		data: {
+        			did: "<%= @did %>"
+        		},
+        		success: function(reply) {
+        		},
+        		error: function() {
+        			alert("noo noooo");
+        		}
+        	}
+        ]
+	});
+});
+</script>

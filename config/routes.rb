@@ -19,7 +19,7 @@ ScheduleMeWebapp::Application.routes.draw do
   # Schedule model endpoints
   match '/add_class', :to => 'schedules#add', via: :get, :constraints => {:format => /(json)/}
 
-  match '/get_schedule', :to => 'schedules#show', via: :get #HTML rendering of students schedule
+  match '/get_calendar', :to => 'calendar#show' #HTML rendering of students schedule
 
   # Calendar endpoint for rendering schedules
   match '/calendar', :to => 'calendar#index'

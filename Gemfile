@@ -12,6 +12,9 @@ gem 'pg'
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
 
+# chronic
+gem "chronic"
+
 # nokogiri/html parsing
 gem 'nokogiri', '~> 1.6.5'
 
