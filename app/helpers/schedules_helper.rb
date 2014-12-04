@@ -16,6 +16,7 @@ module SchedulesHelper
 
 	# Returns a json object of the datetimes associated with this class/sec
 	def hitTestudo(did, classname, section)
+		added_testudos = []
 		course_id = classname
 	  	section_id = section
 
@@ -64,13 +65,14 @@ module SchedulesHelper
 			        sectiondays: sectiondays[i], starttimes: sectionstarttime[i],
 			        endtimes: sectionendtime[i], building: sectionbuilding[i],
 			        classroom: sectionclassroom[i], did: did)
+			        added_testudos.push({classid: pageclass, section: sectionid})
 			    end
 
 		    end
 		   end
 		 end
 		
-		return Testudo.all
+		return added_testudos
 	end
 
 end
