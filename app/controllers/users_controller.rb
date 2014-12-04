@@ -18,6 +18,28 @@ class UsersController < ApplicationController
 
   end
 
+  #GET /users/find.json?name=search_criteria
+  # search_criteria is either did or email
+  def update_user
+
+    attri = params[:attr]
+    newVal = params[:new]
+
+    # Get the user
+    @user = User.where(did: params[:did]).first
+    
+    respond_to do |format|
+
+      if @user.update_attribute(attri, newVal)
+        format.json { render json: @user }
+      else
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+
+    end
+
+  end
+
   #GET /login?did=jlotkows&password=test
   def login
 
