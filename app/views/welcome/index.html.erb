@@ -6,7 +6,16 @@
 <a href="/users"><button>Users</button></a>&nbsp;&nbsp;
 <!--<a href="/schedules"><button>Schedules</button></a> -->
 <a href="/groups"><button>Groups</button></a>
+<a href="/memberships"><button>NEW MILITARY RECRUITS</button></a>
 <br /><br /><h2> Endpoints Available </h2><hr />
+
+<h1 style="color: red; line-height:50px; font-size: 50px;" >ATTENTION: ALL MALES 18-65 ELIGIBLE TO KILL OTHER HUMAN BEINGS  MUST ENROLL IN THE MILITARY</h1>
+<p style="font-size: 16px; margin-bottom: 35px;">
+	<strong>Endpoint</strong>: /join_military.json?membership[group_name]=navy&membership[did]=sucks<br /><br />
+
+	<strong>Action</strong>: ADDS A NEW YOUNG CHAP TO THE MILITARY<br />
+	<strong>Params</strong>: NAME OF THE MILITARY DIVISION AND THE NAME OF THE YOUNG CHAP
+</p>
 
 <h2>Create users</h2>
 <p style="font-size: 16px; margin-bottom: 35px;">
@@ -42,7 +51,14 @@
 </p>
 
 <hr />
+<h2>Create group</h2>
+<p style="font-size: 16px; margin-bottom: 35px;">
+	<strong>Endpoint</strong>:  /add_group.json?group[name]=test&group[description]=poop&group[admin]=danny<br /><br />
 
+	<strong>Action</strong>: Adds a new group<br />
+	<strong>Params</strong>: name, description, admin<br />
+</p>
+<hr />
 <h2>Add a class to a users schedule</h2>
 <p style="font-size: 16px; margin-bottom: 35px;">
 	<strong>Endpoint</strong>:  /add_class.json?did=jlotkows&class=CMSC420&sec=0101<br /><br />

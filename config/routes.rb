@@ -8,6 +8,7 @@ ScheduleMeWebapp::Application.routes.draw do
 
   resources :groups
   resources :users
+  resources :memberships
 
   # Endpoints for android app. Respond with JSON
 
@@ -16,6 +17,12 @@ ScheduleMeWebapp::Application.routes.draw do
   match '/add_user', :to => 'users#add', via: :get, :constraints => {:format => /(json)/}
   match '/login', :to => 'users#login', via: :get, :constraints => {:format => /(json)/}
   match '/edit_user', :to => 'users#update_user', via: :get, :constraints => {:format => /(json)/}
+
+  # Groups
+  match '/add_group', :to => 'groups#add'
+
+  # New Military Recruits
+  match '/join_military', :to => 'memberships#add'
 
   # Schedule model endpoints
   match '/add_class', :to => 'schedules#add', via: :get, :constraints => {:format => /(json)/}

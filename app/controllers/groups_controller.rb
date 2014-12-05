@@ -1,6 +1,19 @@
 class GroupsController < ApplicationController
   # GET /groups
   # GET /groups.json
+
+  def add 
+    @group = Group.new(params[:group])
+
+    respond_to do |format|
+      if @group.save
+        format.json { render json: @group, status: :created, location: @group }
+      else
+        format.json { render json: @group.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   def index
     @groups = Group.all
 
