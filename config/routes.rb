@@ -15,6 +15,7 @@ ScheduleMeWebapp::Application.routes.draw do
   match '/find_user', :to => 'users#find', via: :get, :constraints => {:format => /(json)/}
   match '/add_user', :to => 'users#add', via: :get, :constraints => {:format => /(json)/}
   match '/login', :to => 'users#login', via: :get, :constraints => {:format => /(json)/}
+  match '/edit_user', :to => 'users#update_user', via: :get, :constraints => {:format => /(json)/}
 
   # Schedule model endpoints
   match '/add_class', :to => 'schedules#add', via: :get, :constraints => {:format => /(json)/}
