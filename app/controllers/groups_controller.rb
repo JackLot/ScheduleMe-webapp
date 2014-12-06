@@ -4,6 +4,16 @@ class GroupsController < ApplicationController
   # GET /groups
   # GET /groups.json
 
+  def calendar
+    @group = params[:group_name] 
+     @schedules = get_schedules(params[:group_name])
+
+     respond_to do |format|
+      format.html 
+      format.json { render json: @schedules }
+    end
+  end
+
   def getusers
 
     @users = getUsers(params[:group_name])

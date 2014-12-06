@@ -1,4 +1,5 @@
 module GroupsHelper
+	$defaultColors = ["#3a87ad","#F5A51B","#F51B1B","#B01BF5","#9E9E9E"]
 
 	def getUsers(group_name)
 		users = []
@@ -10,5 +11,10 @@ module GroupsHelper
 	    }
 
 	    return users
+	end
+
+	def get_schedules(group_name)
+		users = getUsers(group_name)
+
 	end
 end

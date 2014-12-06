@@ -19,6 +19,8 @@ test:
   database: scheduleme_test
   pool: 5
   timeout: 5000
+  username: postgres
+  password: 
 
 production:
   adapter: postgresql

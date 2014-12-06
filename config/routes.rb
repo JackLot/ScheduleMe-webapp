@@ -22,6 +22,7 @@ ScheduleMeWebapp::Application.routes.draw do
   # Groups
   match '/add_group', :to => 'groups#add'
   match '/get_users', :to => 'groups#getusers'
+  match '/get_group_calendar', :to => 'groups#calendar'
 
   # New Military Recruits
   match '/join_military', :to => 'memberships#add'
