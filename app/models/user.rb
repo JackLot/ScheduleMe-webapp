@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
-	has_many :memberships
+	set_primary_key "did"
+
+	has_many :memberships, foreign_key: "did"
 	has_many :groups, :through => :memberships
 
   attr_accessible :did, :email, :fname, :lname, :password, :phone

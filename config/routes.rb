@@ -17,9 +17,11 @@ ScheduleMeWebapp::Application.routes.draw do
   match '/add_user', :to => 'users#add', via: :get, :constraints => {:format => /(json)/}
   match '/login', :to => 'users#login', via: :get, :constraints => {:format => /(json)/}
   match '/edit_user', :to => 'users#update_user', via: :get, :constraints => {:format => /(json)/}
+  match '/get_groups', :to => 'users#getgroups'
 
   # Groups
   match '/add_group', :to => 'groups#add'
+  match '/get_users', :to => 'groups#getusers'
 
   # New Military Recruits
   match '/join_military', :to => 'memberships#add'

@@ -11,10 +11,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141205221054) do
+ActiveRecord::Schema.define(:version => 20141206195958) do
 
-  create_table "groups", :force => true do |t|
-    t.string   "name"
+  create_table "groups", :id => false, :force => true do |t|
+    t.string   "name",        :null => false
     t.text     "description"
     t.string   "admin"
     t.datetime "created_at",  :null => false
@@ -59,8 +59,8 @@ ActiveRecord::Schema.define(:version => 20141205221054) do
 
   add_index "testudos", ["did"], :name => "index_testudos_on_did"
 
-  create_table "users", :force => true do |t|
-    t.string   "did"
+  create_table "users", :id => false, :force => true do |t|
+    t.string   "did",        :null => false
     t.string   "fname"
     t.string   "lname"
     t.string   "email"

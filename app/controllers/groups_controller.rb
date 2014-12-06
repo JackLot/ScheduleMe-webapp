@@ -1,6 +1,18 @@
+include GroupsHelper
+
 class GroupsController < ApplicationController
   # GET /groups
   # GET /groups.json
+
+  def getusers
+
+    @users = getUsers(params[:group_name])
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @users }
+    end
+  end
 
   def add 
     @group = Group.new(params[:group])

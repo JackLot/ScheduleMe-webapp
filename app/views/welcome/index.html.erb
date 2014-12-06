@@ -13,8 +13,8 @@
 <p style="font-size: 16px; margin-bottom: 35px;">
 	<strong>Endpoint</strong>: /join_military.json?membership[group_name]=navy&membership[did]=sucks<br /><br />
 
-	<strong>Action</strong>: ADDS A NEW YOUNG CHAP TO THE MILITARY<br />
-	<strong>Params</strong>: NAME OF THE MILITARY DIVISION AND THE NAME OF THE YOUNG CHAP
+	<strong>Action</strong>: ADDS A NEW YOUNG CHAP (USER) TO THE MILITARY (GROUP)<br />
+	<strong>Params</strong>: NAME OF YOUNG CHEAP (DID) AND MILITARY (GROUP_NAME)
 </p>
 
 <h2>Create users</h2>
@@ -50,6 +50,14 @@
 	<em>note</em>: You cannot edit the <em>did</em> of a user
 </p>
 
+<h2>Find groups that a user is in</h2>
+<p style="font-size: 16px; margin-bottom: 35px;">
+	<strong>Endpoint</strong>:  /get_groups.json?did=jlotkows<br /><br />
+
+	<strong>Action</strong>: Returns an array of the groups a user is in<br />
+	<strong>Params</strong>: did<br />
+</p>
+
 <hr />
 <h2>Create group</h2>
 <p style="font-size: 16px; margin-bottom: 35px;">
@@ -58,6 +66,15 @@
 	<strong>Action</strong>: Adds a new group<br />
 	<strong>Params</strong>: name, description, admin<br />
 </p>
+
+<h2>Find users in a group</h2>
+<p style="font-size: 16px; margin-bottom: 35px;">
+	<strong>Endpoint</strong>:  /get_users.json?group_name=cia<br /><br />
+
+	<strong>Action</strong>: Returns an array of the users in a specified group<br />
+	<strong>Params</strong>: group_name<br />
+</p>
+
 <hr />
 <h2>Add a class to a users schedule</h2>
 <p style="font-size: 16px; margin-bottom: 35px;">

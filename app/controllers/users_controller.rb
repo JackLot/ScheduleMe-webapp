@@ -1,6 +1,17 @@
+include UsersHelper
+
 class UsersController < ApplicationController
 
   respond_to :html, :json
+
+  def getgroups
+    @groups = getGroups(params[:did])
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @groups }
+    end
+  end
 
   #GET /users/find.json?name=search_criteria
   # search_criteria is either did or email
