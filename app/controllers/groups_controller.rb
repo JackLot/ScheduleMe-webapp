@@ -1,4 +1,4 @@
-include GroupsHelper
+include CalendarHelper
 
 class GroupsController < ApplicationController
   # GET /groups

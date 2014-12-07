@@ -6,7 +6,21 @@ $(document).ready(function() {
         minTime: "08:00:00",
         maxTime: "22:00:00",
         weekends: false,
-        defaultView: "agendaWeek"
+        defaultView: "agendaWeek",
+        eventSources: [
+        	{
+        		url: '/get_group_calendar.json',
+        		dataType: 'JSON',
+        		data: {
+        			group_name: "<%= @group %>"
+        		},
+        		success: function(reply) {
+        		},
+        		error: function() {
+        			alert("noo noooo");
+        		}
+        	}
+        ]
 	});
 });
 </script>

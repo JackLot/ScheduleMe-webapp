@@ -1,5 +1,18 @@
+include GroupsHelper
 module CalendarHelper
 	$defaultColors = ["#3a87ad","#F5A51B","#F51B1B","#B01BF5","#9E9E9E"]
+
+	def get_schedules(group_name)
+		schedules = []
+
+		users = getUsers(group_name)
+
+		users.each_with_index { |u, i|
+			schedules.concat(get_classes(u, $defaultColors[i]))
+		}
+
+		return schedules
+	end
 
 	def separateDays(days)
     	return days.split(/(?=[A-Z])/)
@@ -20,7 +33,7 @@ module CalendarHelper
 	    end
   	end
 
-	def get_classes(did)
+	def get_classes(did, color)
 		Time.zone = "Eastern Time (US & Canada)"
     	Chronic.time_class = Time.zone
 
@@ -35,7 +48,7 @@ module CalendarHelper
 						:title => testudo.classname,
 						:start => Chronic.parse("this week's " + parseDate(x) + " at " + testudo.starttimes).to_s.sub(/-0500/, ""), 
             			:end => Chronic.parse("this week's " + parseDate(x) + " at " + testudo.endtimes).to_s.sub(/-0500/, ""),
-            			:color => $defaultColors[0]
+            			:color => color
 					}
 				)
 
