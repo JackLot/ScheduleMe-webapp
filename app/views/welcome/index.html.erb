@@ -9,14 +9,6 @@
 <a href="/memberships"><button>NEW MILITARY RECRUITS</button></a>
 <br /><br /><h2> Endpoints Available </h2><hr />
 
-<h1 style="color: red; line-height:50px; font-size: 50px;" >ATTENTION: ALL MALES 18-65 ELIGIBLE TO KILL OTHER HUMAN BEINGS  MUST ENROLL IN THE MILITARY</h1>
-<p style="font-size: 16px; margin-bottom: 35px;">
-	<strong>Endpoint</strong>: /join_military.json?membership[group_name]=navy&membership[did]=sucks<br /><br />
-
-	<strong>Action</strong>: ADDS A NEW YOUNG CHAP (USER) TO THE MILITARY (GROUP)<br />
-	<strong>Params</strong>: NAME OF YOUNG CHEAP (DID) AND MILITARY (GROUP_NAME)
-</p>
-
 <h2>Create users</h2>
 <p style="font-size: 16px; margin-bottom: 35px;">
 	<strong>Endpoint</strong>: /add_user.json?user[did]=jlotkows&user[fname]=Jack&user[lname]=Lot&user[email]=jlotkows@terpmail.umd.edu&user[phone]=111-111-1111&user[password]=test <br /><br />
@@ -76,6 +68,14 @@
 </p>
 
 <hr />
+
+<h2>Add a user to a group</h2>
+<p style="font-size: 16px; margin-bottom: 35px;">
+	<strong>Endpoint</strong>: /join_military.json?membership[group_name]=fun&membership[did]=danny<br /><br />
+
+	<strong>Action</strong>: Adds a user to a group<br />
+	<strong>Params</strong>: Group name and user did
+</p>
 
 <h2>Get a user's schedule</h2>
 <p style="font-size: 16px; margin-bottom: 35px;">
