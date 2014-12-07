@@ -46,8 +46,8 @@ module CalendarHelper
 				classes.push(
 					{ 
 						:title => testudo.classid.to_s + ", section " + testudo.section.to_s,
-						:start => Chronic.parse("this week's " + parseDate(x) + " at " + testudo.starttimes).to_s.sub(/-0500/, ""), 
-            			:end => Chronic.parse("this week's " + parseDate(x) + " at " + testudo.endtimes).to_s.sub(/-0500/, ""),
+						:start => Chronic.parse("this " + parseDate(x) + " at " + testudo.starttimes).to_s.sub(/-0500/, ""), 
+            			:end => Chronic.parse("this " + parseDate(x) + " at " + testudo.endtimes).to_s.sub(/-0500/, ""),
             			:color => color
 					}
 				)
