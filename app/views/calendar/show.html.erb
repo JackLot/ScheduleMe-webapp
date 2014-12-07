@@ -6,6 +6,7 @@ $(document).ready(function() {
         minTime: "08:00:00",
         maxTime: "22:00:00",
         weekends: false,
+        header: false,
         defaultView: "agendaWeek",
         eventSources: [
         	{
@@ -15,6 +16,7 @@ $(document).ready(function() {
         			did: "<%= @did %>"
         		},
         		success: function(reply) {
+                                console.log(reply);
         		},
         		error: function() {
         			alert("noo noooo");
