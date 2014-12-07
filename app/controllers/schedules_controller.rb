@@ -12,6 +12,18 @@ class SchedulesController < ApplicationController
     end
   end
 
+  def delete
+    
+    @testudo = Testudo.where(:did => params[:did], :classid => params[:class], :section => params[:sec])
+    @testudo.destroy_all
+
+    @classes = Testudo.where(:did => params[:did]).select("classid, section").to_a
+
+    respond_to do |format|
+      format.json { render json: @classes }
+    end
+  end
+
   # GET /schedules
   # GET /schedules.json
   def index
