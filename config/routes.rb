@@ -1,5 +1,8 @@
 ScheduleMeWebapp::Application.routes.draw do
   
+  resources :testudos
+
+
   resources :schedules
 
 
@@ -18,6 +21,7 @@ ScheduleMeWebapp::Application.routes.draw do
   match '/login', :to => 'users#login', via: :get, :constraints => {:format => /(json)/}
   match '/edit_user', :to => 'users#update_user', via: :get, :constraints => {:format => /(json)/}
   match '/get_groups', :to => 'users#getgroups'
+  match '/get_classes', :to => 'users#getclasses'
 
   # Groups
   match '/add_group', :to => 'groups#add'

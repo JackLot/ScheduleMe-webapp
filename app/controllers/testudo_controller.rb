@@ -1,0 +1,2 @@
+class TestudoController < ApplicationController
+end

@@ -1,0 +1,21 @@
+<h1>Listing testudos</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @testudos.each do |testudo| %>
+  <tr>
+    <td><%= link_to 'Show', testudo %></td>
+    <td><%= link_to 'Edit', edit_testudo_path(testudo) %></td>
+    <td><%= link_to 'Destroy', testudo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Testudo', new_testudo_path %>

@@ -4,6 +4,15 @@ class UsersController < ApplicationController
 
   respond_to :html, :json
 
+  def getclasses
+
+    @classes = Testudo.where(:did => params[:did]).select("classid, section").to_a
+  
+    respond_to do |format|
+      format.json { render json: @classes }
+    end
+  end
+
   def getgroups
     @groups = getGroups(params[:did])
 
