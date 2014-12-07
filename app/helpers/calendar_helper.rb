@@ -37,6 +37,12 @@ module CalendarHelper
 		Time.zone = "Eastern Time (US & Canada)"
     	Chronic.time_class = Time.zone
 
+    	sundayCase = "week's";
+
+    	if Date.today.wday.eql? 0
+    		sundayCase = ""
+    	end
+
 		classes = []
 
 		testudos = Testudo.where(did: did).to_a
@@ -46,8 +52,8 @@ module CalendarHelper
 				classes.push(
 					{ 
 						:title => testudo.classid.to_s + ", section " + testudo.section.to_s,
-						:start => Chronic.parse("this " + parseDate(x) + " at " + testudo.starttimes).to_s.sub(/-0500/, ""), 
-            			:end => Chronic.parse("this " + parseDate(x) + " at " + testudo.endtimes).to_s.sub(/-0500/, ""),
+						:start => Chronic.parse("this " + sundayCase + " " + parseDate(x) + " at " + testudo.starttimes).to_s.sub(/-0500/, ""), 
+            			:end => Chronic.parse("this " + sundayCase + " " + parseDate(x) + " at " + testudo.endtimes).to_s.sub(/-0500/, ""),
             			:color => color
 					}
 				)
