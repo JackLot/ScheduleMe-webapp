@@ -49,32 +49,11 @@ module CalendarHelper
 
 		testudos.each{ |testudo|
 			separateDays(testudo.sectiondays).each { |x|
-
 				classes.push(
 					{ 
 						:title => testudo.classid.to_s + ", section " + testudo.section.to_s,
-						:start => Chronic.parse("this week's " + parseDate(x) + " at " + testudo.starttimes).to_s.sub(/-0500/, ""), 
-            			:end => Chronic.parse("this week's " + parseDate(x) + " at " + testudo.endtimes).to_s.sub(/-0500/, ""),
-            			:color => color
-					}
-				)
-
-				classes.push(
-					{ 
-						:title => testudo.classid.to_s + ", section " + testudo.section.to_s,
-						:start => Chronic.parse("this " + parseDate(x) + " at " + testudo.starttimes).to_s.sub(/-0500/, ""), 
-            			:end => Chronic.parse("this " + parseDate(x) + " at " + testudo.endtimes).to_s.sub(/-0500/, ""),
-            			:color => color
-					}
-				)
-
-				# Push an instance of the class one week ahead to deal with any timezone issues and make sure that
-				# a schedule actually gets displayed
-				classes.push(
-					{ 
-						:title => testudo.classid.to_s + ", section " + testudo.section.to_s,
-						:start => Chronic.parse("next week's " + parseDate(x) + " at " + testudo.starttimes).to_s.sub(/-0500/, ""), 
-            			:end => Chronic.parse("next week's " + parseDate(x) + " at " + testudo.endtimes).to_s.sub(/-0500/, ""),
+						:start => Chronic.parse("this " + sundayCase + " " + parseDate(x) + " at " + testudo.starttimes).to_s.sub(/-0500/, ""), 
+            			:end => Chronic.parse("this " + sundayCase + " " + parseDate(x) + " at " + testudo.endtimes).to_s.sub(/-0500/, ""),
             			:color => color
 					}
 				)
@@ -82,7 +61,6 @@ module CalendarHelper
 			}
 			
 		}
-		
 		return classes
 	end
 end
