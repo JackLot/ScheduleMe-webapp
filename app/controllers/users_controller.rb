@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
   def getclasses
 
-    @classes = Testudo.where(:did => params[:did]).select("classid, section").to_a
+    @classes = Testudo.where(:did => params[:did]).select("classid, section").uniq.to_a
   
     respond_to do |format|
       format.json { render json: @classes }
